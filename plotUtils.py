@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def plot(xrange, energy, data, name="", plotlist=[], percentile=(1,99)):
+def plot(xrange, energy, data, name="", plotlist=[], percentile=(1,99), savefig=False, show=True):
 
     def plot2d():
         cmax = np.percentile(data, percentile[1])
@@ -31,6 +31,8 @@ def plot(xrange, energy, data, name="", plotlist=[], percentile=(1,99)):
     plt.suptitle(name)
     plt.tight_layout()
 
-    if name:
-        plt.savefig(f"{name}.png")
-    plt.show()
+    if savefig:
+        plt.savefig(f"figures/{name}.png")
+
+    if show:
+        plt.show()

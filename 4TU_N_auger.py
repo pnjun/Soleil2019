@@ -5,7 +5,7 @@ import numpy as np
 
 plotlist = []
 
-fname = "day5/root_NEXAFS_4TU_013.txt"
+fname = "data/day5/root_NEXAFS_4TU_013.txt"
 
 data       = np.loadtxt(fname, skiprows=281)
 intensity  = np.loadtxt(fname, skiprows=59, max_rows=45)[:,3]
@@ -15,4 +15,4 @@ xrange = np.linspace(320,405,171)
 
 data = data[:,1:] / intensity
 
-plotUtils.plot(xrange,energy,data, name="4TU-N", plotlist=plotlist)
+plotUtils.plot(xrange,energy,data, name="4TU-N", plotlist=plotlist, savefig=True)
